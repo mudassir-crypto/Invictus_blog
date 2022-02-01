@@ -6,7 +6,7 @@ const PostCard = ({ post }) => {
  
   return (
     <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
-      <div className="relative overflow shadow-md pb-96 mb-6">
+      <div className="relative overflow shadow-md pb-80 sm:pb-96 mb-6">
         <img
           src={post.featuredImage.url}
           alt={post.title}
