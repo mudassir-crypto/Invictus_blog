@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 const CategoryPosts = ({ posts }) => {
 
-  const router = useRouter
+  const router = useRouter()
 
   if(router.isFallback){
     return <Loader />
@@ -28,13 +28,14 @@ const CategoryPosts = ({ posts }) => {
     </div>
   )
 }
+
 export default CategoryPosts
 
 export async function getStaticProps({ params }) {
-  const data = (await getCategoryPosts(params.slug)) || []
+  const posts = await getCategoryPosts(params.slug)
   
   return {
-    props: { posts: data }
+    props: { posts }
   }
 }
 
